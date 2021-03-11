@@ -124,6 +124,67 @@ header::after{/*Seudo clase*/
     align-items: center;
 }*/
 /**********************************************************LOGO**********************************************************************/
+/*********************************************************PRODUCTOS**********************************************************************/
+.contenedor-galeria-productos{
+    width: 800px;
+    height: 320px;
+    overflow: hidden;
+    margin: 50px auto;
+    border:red;
+}
+img .panuncios{
+    width: 1000px;
+    height: 200px;
+}
+/**************************OVERLAY**********************************/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.fonfoescritura .galeria .contenedor-imagenes-productos{
+    display: flex;/*Haga elementos flexibles*/
+    width: 70%;/*de lo que me ocupe del area de trabajo que haya porcentaje como un marco, siempre que ocupen elementos 90%*/
+    margin: auto;/*dependiendo del dispositivo*/
+    justify-content: space-around;/*Espacio alrededor de las img*/
+    flex-wrap: wrap;/*Que se adapte a la ubicacion de la caja*/
+    /* border-radius: 3px;Bordes redondeados */
+}
+.fonfoescritura .galeria .contenedor-imagenes-productos .proimagen{
+    width: 32%;
+    position: relative;
+    height: 250px;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 3px 0px rgb(49, 50, 54);
+}
+.proimagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*Mejor calidad imagen*/
+}
+.prooverlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgb(49, 55, 66, 0.75);
+    width: 100%;
+    height: 0;
+    transition: 1s ease;
+    overflow: hidden;
+}
+.prooverlay h2{/*alinear el texto*/
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+    font-weight: 300px;
+    overflow: hidden;
+}
+.proimagen:hover .prooverlay{
+    height: 100%;
+    cursor: pointer;
+}
+
 @media(min-width:1000px){
   /*******************************MENU******************************************/  
     .contenedor-menudos{
@@ -157,4 +218,28 @@ header::after{/*Seudo clase*/
         background:transparent;
     }
  /**********************************MENU*************************************************/
+}
+@media screen and (max-width:1000px){
+    .contenedor-imagenes-productos{
+        width: 95%;
+    }
+}
+@media screen and (max-width:700px){
+    .contenedor-imagenes-productos{
+        width: 90%;
+    }
+    .contenedor-imagenes-productos .proimagen{
+        width: 48%;
+    }
+}
+@media screen and (max-width:450px){
+    h1{
+        font-size: 18px;
+    }
+    .contenedor-imagenes-productos{
+        width: 98%;
+    }
+    .contenedor-imagenes-productos .proimagen{
+        width: 80%;
+    }
 }
