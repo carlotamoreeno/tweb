@@ -1,0 +1,156 @@
+body{
+    background-image: url("../img/fotofondo.jpg");
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/***********************************************************MENU*********************************************************/
+.contenedor-menu{
+    width: 95%;
+    max-width: 1000px;
+    margin: 0px auto; /*Para que lo centre*/
+}
+header{
+    background: black;
+    color: white;
+    padding: 1em 0;
+    position: relative;
+}
+header::after{/*Seudo clase*/
+    content: '';
+    clear: both;
+    display: block;
+}
+.aquivalogo{
+    float: left;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.classnav{
+    top: 100%;
+    right: 0;
+    position: absolute;
+    background: rgb(49, 55, 66);
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 700ms;
+    /* height: 0; Altura 0 */
+    /* overflow:hidden ;Esconderlo cuando no haya clik */
+}
+.classnav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.classnav li{
+    border: 2px solid rgb(49, 50, 54);
+}
+.classnav a{
+    color: white;
+    display: block;
+    padding: 1em 4em;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.classnav a:hover, .classnav a:hover{ /*Donde van los hover*/
+    background: orange;
+    color: gray;
+}
+.iconomenu{/*Iconos de menu*/
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right;
+    color: rgba(225,255,255, .3);/*Clarito*/
+
+}
+.contenedor-menudos{/*Donde va la hambuerguesa*/
+    /* background: turquoise; */
+    padding: 1em;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+}
+.movimiento .hamburguesa{/*Esto luego va a tener animacion por js*/
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.movimiento .hamburguesa::before{/*Esto luego va a tener animacion por js*/
+    opacity: 0;
+}
+.movimiento .hamburguesa::after{/*Esto luego va a tener animacion por js*/
+   transform: translateY(-3px) rotate(-90deg);
+}
+
+.hamburguesa,
+.hamburguesa::before,
+.hamburguesa::after{/*Esto será nuestra hamburguesa*/
+    content: '';
+    display: block;
+    background: white;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+.hamburguesa::before{/*Aqui hacemos las tres lineas*/
+    transform: translateY(-6px);
+}
+.hamburguesa::after{/*Aqui hacemos las tres lineas*/
+    transform: translateY(3px);
+}
+.cnopen{/*Para esconder menu*/
+    clip-path: circle(150% at top right); /*Cuando el usuario haga clik en la hamburguesa aparecerá el menu y se quita*/
+}
+/*********************************************************MENU***************************************************************************/
+.fonfoescritura{
+    background-color: black;
+    margin-top: 70px;
+    margin-left: 130px;
+    margin-right: 130px;
+}
+/*.logo{
+    width: 10%;
+    height: 1%;
+    margin-top: 17px;
+    margin-bottom: 0;
+    align-items: center;
+}*/
+@media(min-width:1000px){
+  /*******************************MENU******************************************/  
+    .contenedor-menudos{
+        display: none;
+    }
+    .classnav{
+        height: auto;
+        position: relative;
+        background: transparent;
+        float: right;
+        margin-right: 4px;
+        clip-path: initial;
+    }
+    .classnav li{
+        display: inline-block;
+        border: none;
+    }
+    .classnav a{
+        text-align: left;
+        margin-left: 7px;
+        padding: 0px;
+        margin-right: 1em;
+    }
+    .classnav li img{
+        display: none;
+    }
+    .classnav a:hover{
+        background:transparent;
+    }
+    .classnav a:focus{
+        background:transparent;
+    }
+ /**********************************MENU*************************************************/
+}
